@@ -1,5 +1,7 @@
 {
   "name": "softcatala/sc-footnotes",
   "type": "wordpress-plugin",
-  "description": "Elegant and easy to use footnotes for WordPress. Based on John Watson fd-footnotes plugin"
+  "description": "Elegant and easy to use footnotes for WordPress. Based on John Watson fd-footnotes plugin",
+  "license": "GPLv3"
 }
+
