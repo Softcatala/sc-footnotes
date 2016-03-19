@@ -34,9 +34,7 @@ add_action('wp_enqueue_scripts', 'scfootnote_enqueue_scripts');
 function scfootnote_enqueue_scripts() {
 	if (is_admin()) return;
 
-	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'scfootnote_script', plugins_url( 'scfootnotes.js', __FILE__ ), array('jquery'), '1.34');
-	wp_enqueue_script('scfootnote_script');
+	wp_enqueue_script( 'scfootnote_script', plugins_url( 'scfootnotes.js', __FILE__ ), array('jquery'), '1.34', true);
 }
 
 function scfootnote_config_page() {
