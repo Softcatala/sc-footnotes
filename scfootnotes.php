@@ -116,7 +116,7 @@ function scfootnote_convert($content) {
 			$singleurl = '';
 			if ($linksingle) $singleurl = get_permalink();
 
-			$content = str_replace($fn, "<sup class='footnote'><a title="$title" href='$singleurl#fn-$post_id-$n' id='fnref-$post_id-$n' onclick='return scfootnote_show($post_id)'>$n</a></sup>", $content);
+			$content = str_replace($fn, "<sup class='footnote'><a title=\"$title\" href='$singleurl#fn-$post_id-$n' id='fnref-$post_id-$n' onclick='return scfootnote_show($post_id)'>$n</a></sup>", $content);
 			$n++;
 		}
 
