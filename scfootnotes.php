@@ -3,7 +3,7 @@
 Plugin Name: SC Footnotes
 Plugin URI: https://github.com/Softcatala/wp-theme-mover
 Description: Elegant and easy to use footnotes. Based on John Watson fd-footnotes plugin (http://flagrantdisregard.com)
-Version: 0.0.1
+Version: 0.0.3
 Author: Pau Iranzo
 Author URI: http://www.softcatala.org
 
@@ -112,11 +112,11 @@ function scfootnote_convert($content) {
 		foreach($matches[0] as $fn) {
 			$note = preg_replace('/\[\d+\.(.*?)\]/s', '\1', $fn);
 			$notes[$n] = $note;
-
+			$title = wp_strip_all_tags($note, true);
 			$singleurl = '';
 			if ($linksingle) $singleurl = get_permalink();
 
-			$content = str_replace($fn, "<sup class='footnote'><a href='$singleurl#fn-$post_id-$n' id='fnref-$post_id-$n' onclick='return scfootnote_show($post_id)'>$n</a></sup>", $content);
+			$content = str_replace($fn, "<sup class='footnote'><a title="$title" href='$singleurl#fn-$post_id-$n' id='fnref-$post_id-$n' onclick='return scfootnote_show($post_id)'>$n</a></sup>", $content);
 			$n++;
 		}
 
